@@ -1,0 +1,339 @@
+@keyframes bounce_click {
+  0% {
+    transform: scale(1);
+    transform-origin: center center;
+  }
+
+  25% {
+    transform: scale(0.8);
+    transform-origin: center center;
+  }
+
+  50% {
+    transform: scale(1.3);
+    transform-origin: center center;
+  }
+
+  65% {
+    transform: scale(1);
+    transform-origin: center center;
+  }
+
+  85% {
+    transform: scale(0.8);
+    transform-origin: center center;
+  }
+
+  100% {
+    transform: scale(1);
+    transform-origin: center center;
+  }
+}
+
+.bounce_click {
+  animation: bounce_click 0.4s;
+}
+
+.contain {
+  width: 80%;
+  margin: auto;
+}
+
+.page_goods {
+  width: 80%;
+  margin: 50px auto;
+}
+
+.page_goods .block {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -10px;
+}
+
+.page_goods .block .item {
+  width: 33.3%;
+  height: 100%;
+  padding: 0 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+.page_goods .block .item .box {
+  background-color: #ffffff;
+  padding: 10px;
+}
+
+.page_goods .block .item .box h3 {
+  text-align: center;
+}
+
+.page_goods .block .item .box small {
+  text-align: center;
+  display: block;
+  margin: 10px 0;
+  text-decoration: underline;
+}
+
+.page_goods .block .item .box button {
+  width: 80%;
+  background-color: #bbbbbb;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto 0;
+  border-radius: 10px;
+  padding: 5px 0;
+}
+
+.page_goods .block .item .box button span {
+  pointer-events: none;
+}
+
+.page_basket .content {
+  padding: 2.6316vw 0;
+  display: flex;
+}
+
+.page_basket .content .block_item {
+  width: calc(100% - 17.3684vw);
+}
+
+.page_basket .content .block_item .item {
+  background-color: #dddddd;
+  padding: 1.8421vw;
+  margin-bottom: 2.6316vw;
+  border-radius: 10px;
+  display: flex;
+  position: relative;
+}
+
+.page_basket .content .block_item .item .js_remove_cart {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #666666;
+  border-radius: 5px;
+  color: #ffffff;
+}
+
+.page_basket .content .block_item .item .js_remove_cart span {
+  margin-top: -3px;
+}
+
+.page_basket .content .block_item .item .block {
+  width: calc(100% - 30px);
+}
+
+.page_basket .content .block_item .item .block .title {
+  font-size: 1.3158vw;
+}
+
+.page_basket .content .block_item .item .block .desc {
+  font-size: 1.0526vw;
+  margin: 1.3158vw 0;
+}
+
+.page_basket .content .block_item .item .block .bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: -1.5789vw;
+}
+
+.page_basket .content .block_item .item .block .bottom .left {
+  width: calc(100% - 100px);
+}
+
+.page_basket .content .block_item .item .block .bottom .right {
+  width: 100px;
+}
+
+.page_basket .content .block_item .item .block .bottom .info {
+  font-size: 0.7895vw;
+}
+
+.page_basket .content .block_item .item .block .bottom p {
+  margin-top: 1.0526vw;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.page_basket .content .block_item .item .block .bottom .white {
+  font-size: 1.5789vw;
+  padding: 0.3684vw 0.6842vw;
+  color: #bbbbbb;
+  background-color: white;
+  border-radius: 7px;
+  display: table;
+}
+
+.page_basket .content .block_item .item .block .bottom .count {
+  background-color: #bbbbbb;
+  border-radius: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin-top: -5px;
+}
+
+.page_basket .content .block_item .item .block .bottom .count button {
+  width: 25px;
+  height: 20px;
+}
+
+.page_basket .content .block_item .item .block .bottom .count span {
+  padding: 0 15px;
+  font-size: 20px;
+}
+
+.page_basket .content .block_sum {
+  width: 17.3684vw;
+  background-color: #F2F2F2;
+  padding: 1.5789vw 2.6316vw;
+  border-radius: 10px;
+}
+
+.page_basket .content .block_sum p {
+  font-size: 16px;
+  text-align: center;
+  margin: 0 0 7px;
+}
+
+.page_basket .content .block_sum .white {
+  width: 100%;
+  font-size: 2.1053vw;
+  background-color: white;
+  padding: 12px 0;
+  border-radius: 10px;
+  text-align: center;
+  color: #ED1B2F;
+  margin-bottom: 1.4737vw;
+}
+
+.page_basket .content .block_sum .team_button {
+  height: 40px;
+  border-radius: 10px;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  background-color: #2d3748;
+}
+
+.page_basket .content .block_sum .red {
+  background-color: #ED1B2F;
+  margin-bottom: 10px;
+}
+
+.page_basket .content .block_sum a {
+  width: 100%;
+  height: 2.6316vw;
+}
+
+.page_basket .none_content {
+  padding: 100px 0 !important;
+}
+
+.page_ordering .content {
+  background-color: #e3e3e3;
+  border-radius: 10px;
+  padding: 30px;
+}
+
+.page_ordering .content form {
+  display: flex;
+}
+
+.page_ordering .content form .block {
+  width: calc(100% - (17.3684vw + 8.4211vw));
+}
+
+.page_ordering .content form .block .flex {
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.page_ordering .content form .block .flex:last-child label {
+  margin-bottom: 0;
+}
+
+.page_ordering .content form .block .flex:last-child .sample .item:first-child label {
+  margin-bottom: 1.2632vw;
+}
+
+.page_ordering .content form .block .flex label {
+  width: 27.8947vw;
+}
+
+.page_ordering .content form .block .flex label p {
+  padding-left: 1.5789vw;
+}
+
+.page_ordering .content form .block .flex label input {
+  height: 3.1579vw;
+  border-radius: 7px;
+  padding: 0 10px;
+}
+
+.page_ordering .content form .block .flex label textarea {
+  height: 8.6842vw;
+}
+
+.page_ordering .content form .box {
+  width: 17.3684vw;
+  padding: 2.6316vw;
+  background-color: #f3f3f3;
+  border-radius: 10px;
+  margin-left: 8.4211vw;
+}
+
+.page_ordering .content form .box p {
+  text-align: center;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+}
+
+.page_ordering .content form .box .white {
+  width: 100%;
+  border-radius: 10px;
+  font-size: 1.5789vw;
+  color: #ED1B2F;
+  padding: 0.7895vw 1.0526vw;
+  margin: 0.5263vw 0 1.5789vw;
+  background-color: white;
+}
+
+.page_ordering .content form .box .team_button {
+  width: 100%;
+  height: 40px;
+  background-color: #ED1B2F;
+  border-radius: 10px;
+  color: #ffffff;
+}
+
+.page_ordering .content form .box .success {
+  display: none;
+  margin-top: 10px;
+  font-size: 20px;
+  color: #5ebb5e;
+  font-weight: 500;
+}
+
+.page_ordering .content form .box .active {
+  display: block;
+}
+
+.full_block {
+  font-size: 25px;
+  padding: 15px 0;
+}
+
