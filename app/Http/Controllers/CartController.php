@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Cart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
 {
@@ -27,6 +28,7 @@ class CartController extends Controller
         if (isset($cart)){
 
             $cart = Cart::find($cart->id);
+            $cart->user_id = Auth::check() ? Auth::user()->id : null;
             $cart->session_id = $session_id;
             $cart->count = $cart->count + $request->count;
             $cart->save();
@@ -34,6 +36,7 @@ class CartController extends Controller
 
             $cart = new Cart();
             $cart->session_id = $session_id;
+            $cart->user_id = Auth::check() ? Auth::user()->id : null;
             $cart->good_id = $request->good_id;
             $cart->count = $request->count;
             $cart->save();

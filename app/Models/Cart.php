@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class Cart extends Model
@@ -24,16 +25,23 @@ class Cart extends Model
             )
             ->join('goods as g', 'g.id', '=', 'c.good_id')
             ->where('c.count', '>', 0)
-            ->Where('c.session_id', $session_id)
+            ->where('c.session_id', $session_id)
+            ->orWhere('c.user_id', Auth::check() ? Auth::user()->id : null)
             ->get();
     }
 
-    public static function findItemId($good_id, $session_id)
+    public static function findItemId($good_id, $session_id = null, $user = null)
     {
-        return DB::table('carts as c')
-            ->where('c.good_id', $good_id)
-            ->Where('c.session_id', $session_id)
-            ->first();
+         $query = DB::table('carts as c')
+            ->where('c.good_id', $good_id);
+
+         if(Auth::check()) {
+             $query->where('c.user_id', Auth::user()->id);
+         } else {
+             $query->where('c.session_id', $session_id);
+         }
+
+         return $query->first();
     }
 
     public static function cartCountItem($good_id, $session_id)
@@ -98,8 +106,14 @@ class Cart extends Model
     {
         $session_id = session()->getId();
 
-        return DB::table('carts')
-            ->where('session_id', $session_id)
-            ->delete();
+        $query = DB::table('carts');
+
+        if(Auth::check()) {
+            $query->where('user_id', Auth::user()->id);
+        } else {
+            $query->where('session_id', $session_id);
+        }
+
+        return $query->delete();
     }
 }

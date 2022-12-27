@@ -16,6 +16,7 @@ class TableCarts extends Migration
         Schema::create('carts', function (Blueprint $table) {
             $table->id();
             $table->string('session_id')->nullable();
+            $table->integer('user_id')->nullable();
             $table->integer('good_id')->nullable();
             $table->integer('count')->nullable();
             $table->timestamps();

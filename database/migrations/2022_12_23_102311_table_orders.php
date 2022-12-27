@@ -16,6 +16,7 @@ class TableOrders extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->string('session_id')->nullable();
+            $table->string('user_id')->nullable();
             $table->string('name')->nullable();
             $table->string('phone')->nullable();
             $table->text('address')->nullable();

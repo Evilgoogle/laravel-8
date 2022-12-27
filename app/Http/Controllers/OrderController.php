@@ -6,6 +6,7 @@ use App\Models\Order;
 use App\Models\OrderGood;
 use App\Models\Cart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
@@ -27,6 +28,7 @@ class OrderController extends Controller
 
         $order = new Order();
         $order->session_id = session()->getId();
+        $order->user_id = Auth::check() ? Auth::user()->id : null;
         $order->name = $request->name;
         $order->phone = $request->phone;
         $order->email = $request->email;

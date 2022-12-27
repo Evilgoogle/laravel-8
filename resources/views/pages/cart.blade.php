@@ -17,7 +17,7 @@
                             <div class="item">
                                 <button type="button" class="js_remove_cart" data-cart_id="{{ $i->id }}"><span>x</span></button>
                                 <div class="block">
-                                    <div class="title">{{ $i->title }}</div>
+                                    <div class="title">{{ $i->id }}# {{ $i->title }}</div>
                                     <div class="bottom">
                                         <div class="left">
                                             <p>цена:</p>
