@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\Tests\MiddleController;
+use App\Http\Controllers\Tests\NewsControllerer;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +33,16 @@ Route::group(['prefix' => 'order'], function () {
     Route::get('', [OrderController::class, 'index']);
     Route::post('order', [OrderController::class, 'order']);
 });
+
+/*Route::group(['prefix' => 'test', 'middleware' => 'auth'], function () {
+    Route::get('middle', [MiddleController::class, 'index']);//->middleware('auth');
+});*/
+Route::group(['prefix' => 'test'], function () {
+    Route::get('index', [MiddleController::class, 'index']);
+    Route::get('second', [MiddleController::class, 'second']);
+});
+
+Route::resource('news', [MiddleController::class]);
 
 /*Route::middleware([
     'auth:sanctum',
